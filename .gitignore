@@ -2,6 +2,8 @@
 
 # dependencies
 /design
+/build
+/public
 /node_modules
 /.pnp
 .pnp.js
