@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&family=Nunito+Sans:wght@300;600;800&display=swap');
+
+$fontMain: 'Nunito Sans', sans-serif;
+
+$lmBackground: hsl(0, 0%, 95%);
+$darkGrey: hsl(0, 0%, 52%);
+$white: hsl(0, 0%, 100%);
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-family: $fontMain;
+}
+html {
+	overflow-y: scroll;
+}
+
+body {
+	background: $lmBackground;
+}
+
+.content {
+	margin-top: 2rem;
+	padding: 0 3rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 5rem;
+}
