@@ -1,5 +1,5 @@
-const Detal = () => {
+const Detail = () => {
 	return null;
 };
 
-export default Detal;
+export default Detail;

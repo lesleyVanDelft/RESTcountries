@@ -1,8 +1,11 @@
 import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import CountryCard from './components/CountryCard/CountryCard';
+// import CountryCard from './components/CountryCard/CountryCard';
+import Detail from './pages/Detail';
+import Homepage from './pages/Homepage';
 
 const baseURL = 'https://restcountries.com/v3.1/all';
 
@@ -16,6 +19,7 @@ function App() {
 	}, []);
 
 	if (!data) return null;
+	if (data) console.log(data);
 
 	return (
 		<div className="App">
@@ -25,20 +29,10 @@ function App() {
 				<input type="text" placeholder="Search for a country" />
 			</div>
 
-			<div className="content">
-				{data.map((country, i) => {
-					return country.continents.includes('Europe') ? (
-						<CountryCard
-							key={i}
-							img={country.flags.png}
-							name={country.name.common}
-							population={country.population}
-							region={country.region}
-							capital={country.capital}
-						/>
-					) : null;
-				})}
-			</div>
+			<Routes>
+				<Route path="details/:id" element={<Detail data={data} />} />
+				<Route path="/" element={<Homepage data={data} />} />
+			</Routes>
 		</div>
 	);
 }
